@@ -1,9 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using ComidaAPI.Models;
-
-namespace ComidaAPI.Data;
-
-public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
+namespace ComidaAPI.Data
 {
-    public DbSet<Hamburguesa> Hamburguesas { get; set; }
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
+        public DbSet<Hamburguesa> Hamburguesas { get; set; } = null!;
+        public DbSet<Taco> Tacos { get; set; } = null!;
+    }
 }
