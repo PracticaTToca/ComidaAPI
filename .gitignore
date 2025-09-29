@@ -1,5 +1,14 @@
+# Build
 bin/
 obj/
-/packages/
-riderModule.iml
+packages/
+
+# Rider / IntelliJ
+.idea/
+*.iml
 /_ReSharper.Caches/
+
+# Otros típicos de .NET
+*.user
+*.suo
+*.vs/
