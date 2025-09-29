@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using HamburguesasAPI.Models;
+using ComidaAPI.Models;
 
-namespace HamburguesasAPI.Data;
+namespace ComidaAPI.Data;
 
 public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {

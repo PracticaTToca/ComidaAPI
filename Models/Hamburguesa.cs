@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HamburguesasAPI.Models;
+namespace ComidaAPI.Models;
 
 public class Hamburguesa
 {
@@ -12,7 +14,6 @@ public class Hamburguesa
     public string Nombre { get; set; } = null!;
 
     [Column(TypeName = "decimal(18,2)")]
-    [Range(0, 999999)]
     public decimal Precio { get; set; }
 
     [Required, MaxLength(50)]

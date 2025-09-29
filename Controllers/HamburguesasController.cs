@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using HamburguesasAPI.Data;
-using HamburguesasAPI.Models;
+using ComidaAPI.Data;
+using ComidaAPI.Models;
 
-namespace HamburguesasAPI.Controllers;
+namespace ComidaAPI.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -16,14 +16,12 @@ public class HamburguesasController : ControllerBase
         _context = context;
     }
 
-    // GET: api/hamburguesas
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Hamburguesa>>> GetHamburguesas()
     {
         return await _context.Hamburguesas.AsNoTracking().ToListAsync();
     }
 
-    // GET: api/hamburguesas/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Hamburguesa>> GetHamburguesa(int id)
     {
@@ -31,7 +29,6 @@ public class HamburguesasController : ControllerBase
         return h == null ? NotFound() : h;
     }
 
-    // POST: api/hamburguesas
     [HttpPost]
     public async Task<ActionResult<Hamburguesa>> PostHamburguesa(Hamburguesa h)
     {
@@ -40,7 +37,6 @@ public class HamburguesasController : ControllerBase
         return CreatedAtAction(nameof(GetHamburguesa), new { id = h.Id }, h);
     }
 
-    // PUT: api/hamburguesas/5
     [HttpPut("{id}")]
     public async Task<IActionResult> PutHamburguesa(int id, Hamburguesa h)
     {
@@ -61,7 +57,6 @@ public class HamburguesasController : ControllerBase
         return NoContent();
     }
 
-    // DELETE: api/hamburguesas/5
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteHamburguesa(int id)
     {

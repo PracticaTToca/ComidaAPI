@@ -1,10 +1,10 @@
-using HamburguesasAPI.Data;
+using ComidaAPI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// conexión a SQL Server/Azure
+// Configura DbContext con la cadena de conexión
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
